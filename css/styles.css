@@ -89,6 +89,10 @@ body {
     transition: color 250ms var(--timing-function);
 }
 
+.active {
+    color: var(--hover-color);
+}
+
 .active::after {
     content: '';
     width: 100%;
@@ -658,6 +662,12 @@ body {
     margin-left: auto;
     padding: 0;
     cursor: pointer;
+    transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
+}
+
+.modal-button:is(:hover, :focus) {
+    background-color: var(--hover-color);
+    fill: var(--primary-white-color);
 }
 
 .btn-close {
