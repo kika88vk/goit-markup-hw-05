@@ -86,6 +86,7 @@ body {
     color: var(--title-text-color);
     text-decoration: none;
     position: relative;
+    transition: color 250ms var(--timing-function);
 }
 
 .active::after {
@@ -100,7 +101,7 @@ body {
     top: 43px;
 }
 
-.link-nav:hover, .link-nav:focus {
+.link-nav:is(:hover, :focus) {
     color: var(--hover-color)
 }
 
@@ -175,11 +176,11 @@ body {
     /* margin-right: auto; */
     /* margin-left: auto; */
     border: 0;
-
+    transition: background-color 250ms var(--timing-function);
 }
 
-.hero-btn:focus, .hero-btn:hover {
-    background: var(--hover-color)
+.hero-btn:is(:hover, :focus) {
+    background-color: var(--hover-color)
     
 }
 
@@ -346,9 +347,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms var(--timing-function);
 }
 
-.team-soc-link:hover, .team-soc-link:focus {
+.team-soc-link:is(:hover, :focus) {
     background-color: var(--hover-color);
 }
 /* --------------Customers---------------- */
@@ -393,6 +395,7 @@ body {
     justify-content: center;
     align-items: center;
     color: #8E8F99;
+    transition: color 250ms var(--timing-function), border-color 250ms var(--timing-function);
 }
 
 .customers-icon {
@@ -473,6 +476,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms var(--timing-function);
 }
 
 .soc-media-link:hover, .soc-media-link:focus {
@@ -520,11 +524,12 @@ body {
     border: 1px solid #E7E9FC;
     border-radius: 4px;
     padding: 12px 24px;
+    transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
 }
 
 .filter-btn:hover {
     color: var(--primary-white-color);
-    background: #404BBF;
+    background-color: #404BBF;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -552,12 +557,40 @@ body {
 .card-item {
     background-color: #fff;
     margin-bottom: 24px;
-
+    transition: box-shadow 250ms var(--timing-function);
 }
 
-.card-item:hover,
-.card-item:focus {
+.card-item:is(:hover, :focus) .card-overlay-info{
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    transform: translateY(-100%);
+}
+
+.card-item:is(:hover, :focus) {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.card-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-overlay-info {
+    position: absolute;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #F4F4FD;
+    background: #4D5AE5;
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    padding-right: 32px;
+    padding-bottom: 164px;
+    padding-left: 32px;
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: translateY(0);
+    transition: transform 250ms var(--timing-function);
 }
 
 .card-item-info {
